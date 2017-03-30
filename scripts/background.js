@@ -14,7 +14,7 @@ chrome.extension.onConnect.addListener(function(port) {
         if(msg.status=='start' && !timeoutID ){
             timeoutID=setInterval(function () {
                 main();
-            },1000*1000*msg.init);
+            },1000*60*msg.init);
         }
         if(msg.status=='stop'){
             clearInterval(timeoutID);
