@@ -4,7 +4,7 @@
     "version": "1.0",
     "description": "time for smoking",
     "icons": {
-        "1": "icon/smoking.png"
+        "1": "icon/reminder-icon.png"
     },
     "background": {
         "scripts": ["scripts/background.js"]
