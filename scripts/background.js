@@ -1,5 +1,5 @@
 chrome.extension.onConnect.addListener(function(port) {
-    var timeoutID;
+    var setIntervalId;
     port.onMessage.addListener(function(msg) {
         function main () {
             var date=new Date();
@@ -11,14 +11,19 @@ chrome.extension.onConnect.addListener(function(port) {
             setTimeout(notification.close.bind(notification), 1500);
         }
 
-        if(msg.status=='start' && !timeoutID ){
-            timeoutID=setInterval(function () {
+        if(msg.status=='start' && !setIntervalId ){
+            setIntervalId=setInterval(function () {
                 main();
             },1000*60*msg.init);
+            localStorage.setItem('setIntervalId', setIntervalId);
         }
         if(msg.status=='stop'){
-            clearInterval(timeoutID);
-            timeoutID=null;
+            setIntervalId=localStorage.getItem('setIntervalId');
+            console.log('setIntervalId=',setIntervalId);
+            clearInterval(setIntervalId);
+            setIntervalId=null;
+            localStorage.removeItem('setIntervalId');
+
         }
 
         /**
