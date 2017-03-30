@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "Название_плагина",
+    "version": "1.0",
+    "description": "описание Плагин",
+    "icons" :  {
+        "16" :  "icon/16.png",
+        "48" :  "icon/48.png",
+        "128" :  "icon/128.png"
+    },
+    "browser_action": {
+        "default_title": "Заголовок. Его видно если навести курсор",
+        "default_popup": "Путь к странице с popup.html",
+        "default_icon": "icon/48.pngПуть к иконке расширения"
+    },
+    "permissions": [          // настройки разрешений
+        "tabs" ,  // работает в каждой открытой вкладке
+        "bookmarks" ,
+        "http://www.safezone.cc/" ,
+        "http://*.google.com/" , //список адресов,к которым можно будет обращаться
+        "unlimitedStorage", //Снимаем ограничение наобъем кэшированных данных для сайтов  5 МБ.
+        "http://*",
+        "http://*/*",
+        "https://*",
+        "https://*/*",
+        "contextMenus", //подключаем контексное меню
+        "notifications"   //подключаем уведомления
+    ],
+
+    "background": {
+        "page": "background.html"  //указываем имя и адрес страницы,выполняемой в фоновом режиме (невидимая)
+    },
+    "content_security_policy": "default-src 'self'"
+}

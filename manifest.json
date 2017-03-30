@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "Time",
+    "version": "1.0",
+    "description": "time for smoking",
+    "icons": {
+        "1": "icon/smoking.png"
+    },
+    "background": {
+        "scripts": ["scripts/background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "css": ["scripts/bootstrap.min.css"],
+            "js": [ "scripts/jquery.min.js","scripts/bootstrap.min.css", "scripts/run.js"]
+        }
+    ],
+    "browser_action": {
+        "default_title": "Working",
+        "default_popup": "views/popup.html",
+        "default_icon": "icon/reminder-icon.png"
+    },
+    "permissions": [
+        "tabs",
+        "bookmarks",
+        "unlimitedStorage",
+        "contextMenus",
+        "notifications",
+        "http://*/",
+        "https://*/"
+    ]
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message</title>
+    <link rel="stylesheet" href="../scripts/bootstrap.min.css"/>
+    <script type="application/javascript" src="../scripts/jquery.min.js"></script>
+    <script type="application/javascript" src="../scripts/bootstrap.min.js"></script>
+
+    <style>
+        body
+        {
+            min-width: 250px;
+            margin: 0px;
+            font-family: Segoe UI, Arial, sans-serif;
+            font-size: 13px;
+            background-color: #f8f6f2;
+        }
+        header
+        {
+            height: 45px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e1ddd8;
+        }
+
+        #logo
+        {
+            display: block;
+            position: relative;
+            top: 15px;
+            margin: 0px auto;
+        }
+        #wrapper
+        {
+            padding: 0px 20px;
+        }
+        footer
+        {
+            cursor: pointer;
+            padding: 10px 35px;
+            border-top: 1px solid #e1ddd8;
+        }
+        form{
+            width: 100%;
+            padding-left:20px ;
+        }
+        input{
+            width: 95%;
+        }
+        input[type=button]{
+            width: 50%;
+        }
+        textarea{
+            width: 95%;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="container">
+<form  class="form-horizontal" >
+    <div  class="form-group">
+    <label for="int">Интервал напоминания мин</label>
+    <input class="text-success" id="int" value="60" name="int"/>
+    </div>
+    <div class="form-group">
+        <label for="text">Текст сообщения </label>
+        <textarea rows="10" class="text-success" id="text">Текст Напоинания</textarea>
+    </div>
+    <div class="form-group">
+    <input class="js-start btn-success" type="button" value="вкл"/>
+    </div>
+    <div class="form-group">
+        <input class="js-stop btn-success"  type="button" value="выкл" />
+    </div>
+</form>
+</div>
+
+<script type="application/javascript" src="../scripts/run.js"></script>
+</body>
+</html>
