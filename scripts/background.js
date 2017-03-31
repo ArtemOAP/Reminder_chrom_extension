@@ -23,7 +23,6 @@ chrome.extension.onConnect.addListener(function(port) {
             clearInterval(setIntervalId);
             setIntervalId=null;
             localStorage.removeItem('setIntervalId');
-
         }
 
         /**
